@@ -1,6 +1,102 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Mit izgultok</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      background-image: linear-gradient(to right, #ff6384, #ff9f13, #ffc200, #00ff7f, #0074ff, #a652e8, #ff6384);
+      background-size: 200% 100%;
+      animation: flashy-background 10s linear infinite;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    @keyframes flashy-background {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .text {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 20px;
+      background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rotate-text 4s linear infinite;
+    }
+
+    @keyframes rotate-text {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .emoji {
+      font-size: 72px;
+      margin-bottom: 40px;
+    }
+
+    .frog {
+      position: absolute;
+      animation: jump 2s linear infinite;
+      transform-origin: bottom center;
+    }
+
+    @keyframes jump {
+      0% {
+        transform: translate(-50%, 0) rotate(0deg);
+      }
+      50% {
+        transform: translate(-50%, -100px) rotate(-15deg);
+      }
+      100% {
+        transform: translate(-50%, 0) rotate(0deg);
+      }
+    }
+  </style>
+</head>
 <body>
-<h1>Mit izgultok?</h1>
+  <div class="container">
+    <h1 class="text">Mit izgultok?</h1>
+    <div class="emoji">
+      <span>&#x1FAE1;</span>
+      <span>&#x1F438;</span>
+    </div>
+  </div>
+
+  <div class="frog" style="left: 20%; bottom: 10%;">&#x1FAE1;</div>
+  <div class="frog" style="left: 40%; bottom: 20%;">&#x1F438;</div>
+  <div class="frog" style="left: 60%; bottom: 30%;">&#x1FAE1;</div>
+  <div class="frog" style="left: 80%; bottom: 40%;">&#x1F438;</div>
+
+  <script>
+    var frogs = document.querySelectorAll('.frog');
+    var frogDelay = 0;
+
+    frogs.forEach(function(frog) {
+      frog.style.animationDelay = frogDelay + 's';
+      frogDelay += 0.5;
+    });
+  </script>
 </body>
 </html>
