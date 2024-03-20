@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ez aztán fantasztikus!</title>
+  <title>Fantasztikus Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+      font-family: 'Montserrat', sans-serif;
       overflow: hidden;
       background: #222;
       color: #fff;
@@ -20,54 +20,11 @@
     }
 
     h1 {
-      font-size: 6em;
+      font-size: 4em; /* Adjusted font size for better mobile readability */
       text-align: center;
       animation: glow 2s ease-in-out infinite alternate;
     }
 
     @keyframes glow {
       from {
-        text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f;
-      }
-      to {
-        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 60px #0ff, 0 0 70px #0ff, 0 0 80px #0ff;
-      }
-    }
-
-    .emoji {
-      font-size: 3em;
-      animation: dance 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes dance {
-      from {
-        transform: translateX(-50px) rotate(0deg);
-      }
-      to {
-        transform: translateX(50px) rotate(360deg);
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="emoji">😄</div>
-  <h1>Ez aztán fantasztikus!</h1>
-
-  <script>
-    // JavaScript for moving the text
-    const fantasticText = document.querySelector('h1');
-    let direction = 1;
-    let position = 0;
-
-    function moveText() {
-      position += direction * 2;
-      fantasticText.style.left = position + 'px';
-      if (position >= window.innerWidth - fantasticText.offsetWidth || position <= 0) {
-        direction *= -1;
-      }
-    }
-
-    setInterval(moveText, 50);
-  </script>
-</body>
-</html>
+        text-shadow: 0 0 10px #00f, 0 0 20px #00f
